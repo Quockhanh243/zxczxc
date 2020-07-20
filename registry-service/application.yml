@@ -1,0 +1,9 @@
+server:
+  port: 8761 #the default port used for eureka servers
+management:
+  endpoints:
+    exposure:
+      include: "*"
+  endpoint:
+    health:
+      show-details: always

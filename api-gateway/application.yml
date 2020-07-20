@@ -1,0 +1,33 @@
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    employee-service:
+      path: /employee/**
+      serviceId: employee-service
+      stripPrefix: false
+      sensitiveHeaders:
+    report-service:
+      path: /report/**
+      serviceId: report-service
+      stripPrefix: false
+      sensitiveHeaders:
+    base-service:
+      path: /base/**
+      serviceId: base-service
+      stripPrefix: false
+      sensitiveHeaders:
+server:
+  port: 8080
+management:
+  endpoints:
+    exposure:
+      include: "*"
+  endpoint:
+    health:
+      show-details: always
