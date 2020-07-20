@@ -12,6 +12,8 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+    hibernate:
+      ddl-auto: update
 logging:
   level:
     org:
